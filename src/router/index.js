@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ContactView from '../views/ContactView.vue'
 
 const routes = [{
         path: '/',
@@ -19,7 +18,8 @@ const routes = [{
     {
         path: '/contact',
         name: 'contact',
-        component: ContactView
+        component: () =>
+            import ( /* webpackChunkName: "contact", webpackPrefetch:true */ '../views/ContactView.vue')
     }
 ]
 
