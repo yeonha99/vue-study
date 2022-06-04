@@ -1,8 +1,21 @@
 <template>
 <div>
-<input type="text" v-model="valueModel" />
-<input type="number" v-model.number="valueModel2" />
-<textarea v-model="valueModel3"></textarea>
+    <!--
+    <select v-model="city">
+        <option value="02">서울</option>
+        <option value="21">부산</option>
+        <option value="063">제주</option>
+    </select>
+    <label><input type="checkbox" value="서울" v-model="checked">서울</label>
+    <label><input type="checkbox" value="부산" v-model="checked">부산</label>
+    <label><input type="checkbox" value="제주" v-model="checked">제주</label>
+    -->
+    <label> <input type="radio" v-bind:value="radio[0]" v-model="picked" />서울</label>
+    <label> <input type="radio" v-bind:value="radio[1]" v-model="picked" />부산</label>
+    <label> <input type="radio" v-bind:value="radio[2]" v-model="picked" />제주</label>
+    <br>
+    <span>{{picked}}</span>
+
 </div>
 </template>
 <script>
@@ -10,9 +23,13 @@ export default {
     components: {},
     data(){
         return {
-            valueModel: 'South Korea',
-            valueModel2: 12,
-            valueModel3: '안녕하세요.'
+            city: "063" ,
+            checked: [],
+            radio: ["서울","부산","제주"],
+            radio1: "서울",
+            radio2: "부산",
+            radio3: "제주",
+            picked: []
         };
     },
     setup() {
