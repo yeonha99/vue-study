@@ -83,6 +83,15 @@ const routes = [{
         // which is lazy-loaded when the route is visited.
         component: () =>
             import ( /* webpackChunkName: "event" */ '../views/EventView.vue')
+    },
+    {
+        path: '/computed',
+        name: 'computed',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+            import ( /* webpackChunkName: "computed" */ '../views/ComputedView.vue')
     }
 ]
 
