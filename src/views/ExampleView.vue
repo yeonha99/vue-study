@@ -1,19 +1,18 @@
 <template>
     <div>
-        <input type="text" v-model="name" />
-        <input type="text" v-model.number="age" />
-        <input type="text" v-model="job" />
-        <button type="button" @click="saveUserInfo">저장</button>
+        <PageTitle title="부모컴포넌트에서 전송할 페이지 타이틀"/>
     </div>
 </template>
 <script>
+import PageTitle from '../components/PageTitle.vue';
+
 export default {
-    components: {},
+     components: {PageTitle},
     data(){
         return {
             name: '',
             age: 0,
-            job: ''
+            job: '' 
         }
     },
     setup() {
@@ -28,29 +27,6 @@ export default {
         
     },
     methods: {
-        saveUserInfo(){
-           if(this.name==''){
-              return alert("사용자 이름을 입력하세요.")
-           }
-            if(this.age==0 || this.age== ''){
-              return alert("나이를 입력하세요.")
-           }          
-
-            const params={
-                name: this.name,
-                age: this.age,
-                job : this.job
-            }
-
-            const result=this.saveData(params);
-
-            if(result=='S') return alert('사용자 정보가 생성되었습니다.');
-        },
-        saveData(params){
-            console.log(params);
-            const result='S';
-            return result;
-        }
 
     }
 }
