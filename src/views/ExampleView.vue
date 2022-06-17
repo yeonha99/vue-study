@@ -27,7 +27,8 @@ export default {
     },
     methods: {
     callChildFunc(){
-        this.$refs.child.$refs.child_btn.click();
+        //this.$refs.child.$refs.child_btn.click();
+        this.$refs.child.childFunc();
     }
     }
 }
