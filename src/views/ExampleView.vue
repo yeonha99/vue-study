@@ -1,7 +1,7 @@
 <template>
     <div>
-        <button type="button" @click="callChildFunc">부모에 있는 클릭</button>
-        <ChildComponent ref="child" />
+        <h1>{{parentMsg}}</h1>
+        <ChildComponent @send-message="sendMessage" />
     </div>
 </template>
 <script>
@@ -11,7 +11,7 @@ export default {
      components: {ChildComponent},
     data(){
         return {
-
+            parentMsg:''
         }
     },
     setup() {
@@ -30,6 +30,10 @@ export default {
         //this.$refs.child.$refs.child_btn.click();
         //this.$refs.child.childFunc();
         this.$refs.child.msg='부모컴포넌트에서 변경한 메시지';
+    },
+    sendMessage(data){
+        this.parentMsg=data;
+        alert(data);
     }
     }
 }
