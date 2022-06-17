@@ -28,7 +28,8 @@ export default {
     methods: {
     callChildFunc(){
         //this.$refs.child.$refs.child_btn.click();
-        this.$refs.child.childFunc();
+        //this.$refs.child.childFunc();
+        this.$refs.child.msg='부모컴포넌트에서 변경한 메시지';
     }
     }
 }

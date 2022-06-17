@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button type="button" @click="childFunc" ref="child_btn">자식에 있는 클릭</button>
+        <h1>{{msg}}</h1>
     </div>
 </template>
 <script>
@@ -11,7 +11,7 @@ export default {
      },
     data(){
         return {
-          sampleData: ''  
+          msg: '자식에 있던 메시지'  
         };
     },
     setup() {
