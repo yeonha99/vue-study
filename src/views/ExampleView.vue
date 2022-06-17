@@ -1,20 +1,17 @@
 <template>
     <div>
-        <PageTitle :title="title"/>
-        <ChildComponent :likes="likes" :isOk="ture" :commentIds="[1,5,2,3]" :author="author"/>
+        <button type="button" @click="callChildFunc">부모에 있는 클릭</button>
+        <ChildComponent ref="child" />
     </div>
 </template>
 <script>
-import PageTitle from '../components/PageTitle.vue';
 import ChildComponent from './ChildComponent.vue';
 
 export default {
-     components: {PageTitle,ChildComponent},
+     components: {ChildComponent},
     data(){
         return {
-            title: '부모컴포넌트에서 전송할 페이지 타이틀',
-            likes: 23,
-            author: {name:'홍길동', company:'회사이름'}
+
         }
     },
     setup() {
@@ -29,7 +26,9 @@ export default {
         
     },
     methods: {
-
+    callChildFunc(){
+        this.$refs.child.$refs.child_btn.click();
+    }
     }
 }
 </script>
